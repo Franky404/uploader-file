@@ -6,7 +6,7 @@ const path = require('path');
 
 // Set The Storage Engine
 const storage = multer.diskStorage({
-  destination: './public/uploads/',
+  destination: './public/files/',
   filename: function(req, file, cb){
     cb(null,file.fieldname + '-' + Date.now() + path.extname(file.originalname));
   }
@@ -42,7 +42,7 @@ app.post('/upload', (req, res) => {
         });
       } else {
         res.json({
-          file: `https://upload-ky.herokuapp.com/uploads/${req.file.filename}`
+          `https://upload-ky.herokuapp.com/files/${req.file.filename}`
         });
       }
     }
