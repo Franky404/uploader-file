@@ -1,5 +1,4 @@
 
-//Recode by YogiPw
 const express = require('express');
 const multer = require('multer');
 const ejs = require('ejs');
@@ -43,15 +42,13 @@ app.post('/upload', (req, res) => {
         });
       } else {
         res.json({
-          author: 'YogiPw', 
-          msg: 'File Uploaded!',
-          file: `https://nodeuploads.yogipw.repl.co/uploads/${req.file.filename}`
+          file: `https://upload-ky.herokuapp.com/uploads/${req.file.filename}`
         });
       }
     }
   });
 });
 
-const port = 3000;
+const port = process.env.PORT || 3000;
 
 app.listen(port, () => console.log(`Server started on port ${port}`));
