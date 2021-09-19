@@ -1,4 +1,3 @@
-
 const express = require('express');
 const multer = require('multer');
 const ejs = require('ejs');
@@ -42,7 +41,7 @@ app.post('/upload', (req, res) => {
         });
       } else {
         res.json({
-          `https://upload-ky.herokuapp.com/files/${req.file.filename}`
+          url:`https://upload-ky.herokuapp.com/files/${req.file.filename}`
         });
       }
     }
