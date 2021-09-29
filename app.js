@@ -41,7 +41,7 @@ app.post('/upload', (req, res) => {
         });
       } else {
         res.json({
-          url:`https://upload-ky.herokuapp.com/files/${req.file.filename}`
+          url:`https://uploader.frangky.me/files/${req.file.filename}`
         });
       }
     }
