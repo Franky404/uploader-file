@@ -43,6 +43,7 @@ app.post('/upload', (req, res) => {
         res.json({
           url:`https://uploader.frangky.me/files/${req.file.filename}`
         });
+       console.log(res.json)
       }
     }
   });
