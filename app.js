@@ -15,8 +15,6 @@ const storage = multer.diskStorage({
 const upload = multer({
   storage: storage
 }).single('file');
-
-
 // Init app
 const app = express();
 
@@ -43,12 +41,11 @@ app.post('/upload', (req, res) => {
         res.json({
           url:`https://uploader.frangky.me/files/${req.file.filename}`
         });
-       console.log(res.json)
+       console.log(req.file.filename)
       }
     }
   });
 });
 
 const port = process.env.PORT || 3000;
-
 app.listen(port, () => console.log(`Server started on port ${port}`));
